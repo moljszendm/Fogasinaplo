@@ -1,0 +1,57 @@
+﻿@model Fogasnaplo.Models.Fogas
+
+@{
+    ViewData["Title"] = "Fogás törlése";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3>Biztos vagy benne, hogy szeretnéd törölni a fogásod?</h3>
+<div>
+    <h4>Adatok</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nev)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nev)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CsapatNev)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CsapatNev)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HalFajtak)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HalFajtak)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Suly)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Suly)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Allasok)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Allasok)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Törlés" class="btn btn-primary btn-danger" /> |
+        <a class="nav-link-1" asp-action="Index">Vissza a fogásokhoz</a>
+    </form>
+</div>

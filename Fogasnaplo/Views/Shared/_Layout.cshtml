@@ -1,0 +1,90 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Digitális Fogásnapló</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site_2.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color: #fff;">
+                <div class="container">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link-1" asp-area="" asp-controller="Home" asp-action="Index">Főoldal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-1" asp-area="" asp-controller="Fogasok" asp-action="">Fogások</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-1" asp-area="" asp-controller="Fogasok" asp-action="Eredmenyek">Eredmények</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-1" asp-area="" asp-controller="Home" asp-action="Knowledgebase">Tudásbázis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-1" asp-area="" asp-controller="Home" asp-action="Contact">Kapcsolat</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo list-group list-group-horizontal align-items-center">
+                    @{
+                        if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="list-group list-group-horizontal">
+                                <il class="nav-item">
+                                    <a id="int-link" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)</a>
+                                </il>
+                                <il class="nav-item">
+                                    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button id="logout" type="submit" class="btn btn-primary-2">Kijelentkezés</button>
+                                    </form>
+                                </il>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="nav-link-1" asp-area="Identity" asp-page="/Account/Login">Bejelentkezés</a>
+                            <a class="nav-link-1" asp-area="Identity" asp-page="/Account/Register">Regisztráció</a>
+                        }
+                    }
+                    <il class="navbar-brand ">
+                        <img src="~/pictures/logo.jpg" alt="" class="" />
+                    </il>
+                </div>
+            </nav>
+        </div>
+
+
+
+    </header>
+    <div class="container-fluid">
+        <div id="frame" class="">
+            <div class="card-body">
+                <main role="main" class="">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-muted" style="background-color: rgba(252, 252, 252, 0.01)">
+        <div class="container-footer">
+            &copy; 2022 - Fogási Napló - <a id="int-link" asp-area="" asp-controller="Home" asp-action="Privacy">ÁSZF</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

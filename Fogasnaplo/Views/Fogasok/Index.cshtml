@@ -1,0 +1,113 @@
+﻿@model Fogasnaplo.Models.FogasokKeresese
+
+@{
+    ViewData["Title"] = "Fogások rögzítése";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        <div class="list-group list-group-horizontal">
+            <p>
+                <a class="nav-link-1" asp-action="Create">Új fogás rögzítése</a>
+            </p>
+        </div>
+    }
+    else
+    {
+        <p>Új fogás rögzítéséhez be kell jelentkeznie!<br/>
+        <a class="nav-link-1" asp-area="Identity" asp-page="/Account/Login">Bejelentkezés</a>
+        </p>
+    }
+}
+
+
+
+
+
+<form>
+
+    <input type="text" asp-for="NevKeres" />
+
+    <select asp-for="CsapatKeres" asp-items="Model.CsapatLista">
+        <option value="">All</option>
+    </select>
+
+
+    <input class="btn btn-primary" type="submit" value="Keresés" name="Nev" />
+
+</form>
+
+<table class="table" id="fogas-tablazat">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].Nev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].CsapatNev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].Ido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].HalFajtak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].Suly)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].Allasok)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.FogasLista)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nev)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CsapatNev)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HalFajtak)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suly)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Allasok)
+            </td>
+            @{
+                if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        <a class="nav-link-1" asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
+                        <a class="nav-link-1" asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                        <a class="nav-link-1" asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                    </td>
+                }
+                else if (User.IsInRole("SuperAdmin"))
+                {
+                    <td>
+                        <a class="nav-link-1" asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
+                        <a class="nav-link-1" asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                        <a class="nav-link-1" asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                    </td>
+                }
+                else 
+                { 
+                }
+            }
+
+        </tr>
+        }
+    </tbody>
+</table>

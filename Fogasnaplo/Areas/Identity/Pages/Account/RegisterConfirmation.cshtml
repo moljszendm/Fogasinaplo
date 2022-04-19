@@ -1,0 +1,21 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Regisztráció jóváhagyva";
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+    <p>
+        Ennek az alkalmazásnak jelenleg nincs regisztrálva valódi e-mail küldője.<a id="confirm-link" href="@Model.EmailConfirmationUrl">Kattintson ide a fiók megerősítéséhez.</a>
+    </p>
+    }
+    else
+    {
+<p>
+    Kérjük, ellenőrizze e-mailjét a fiók megerősítéséhez.
+</p>
+    }
+}

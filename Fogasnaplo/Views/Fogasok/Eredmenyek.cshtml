@@ -1,0 +1,35 @@
+﻿@model Fogasnaplo.Models.FogasokKeresese
+
+@{
+    ViewData["Title"] = "Eredmények";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table class="table" id="fogas-tablazat">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].CsapatNev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FogasLista[0].Suly)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.FogasLista)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CsapatNev)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Suly)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

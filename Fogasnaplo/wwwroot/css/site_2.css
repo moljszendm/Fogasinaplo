@@ -1,0 +1,227 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+a.navbar-brand {
+}
+
+/* Provide sufficient contrast against white background */
+
+.btn-primary {
+    color: #fff;
+    background-color: #fcc17a;
+    text-transform: uppercase;
+    font-family: 'Akzidenz Grotesk Super' !important;
+    border: none;
+}
+
+.btn.btn-primary:focus,
+.btn.btn-primary:hover {
+    background-color: #51a2ce;
+}
+
+.btn-primary-2 {
+    color: #fff;
+    background-color: #fcc17a;
+    text-transform: uppercase;
+    font-family: 'Akzidenz Grotesk Super' !important;
+    font-size: 12px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.btn.btn-primary-2:focus,
+.btn.btn-primary-2:hover {
+    background-color: #51a2ce;
+    color: #fff;
+}
+
+.nav-link-1, .nav-link-card {
+    color: #195c82 !important;
+    font-family: 'Akzidenz Grotesk Super' !important;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding-right: 15px;
+}
+
+    .nav-link-1:active, .nav-link-card:active {
+        color: #51a2ce;
+        text-decoration: none;
+    }
+
+    .nav-link-1:focus, .nav-link-1:hover, .nav-link-card:focus, .nav-link-card:hover {
+        color: #fcc17a;
+        text-decoration: none;
+    }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #51a2ce;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: "Akzidenz Grotesk Super";
+    color:#808080;
+    background-image: url("../pictures/bg.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #fff;
+}
+
+footer {
+    background-color: rgba(252, 252, 252, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    width: 85%;
+    background-color: transparent;
+    border: none;
+}
+
+.card-title-welcome {
+    font-family: 'Akzidenz Grotesk Super';
+    color: #000000;
+}
+
+.card-text-welcome {
+    font-family: 'Akzidenz Grotesk Super';
+    color: #000000;
+    font-size: 13px;
+}
+
+.logo {
+    font-size: 12px;
+    align-items: baseline;
+    text-align: center;
+}
+
+.form-group {
+    font-size: 12px;
+}
+
+div.container-fluid {
+    position: relative;
+    width: 85%;
+    background-color: rgba(252, 252, 252, 0.9);
+    border: none;
+}
+
+nav-link.manage {
+    color: #fcc17a;
+}
+
+.container-footer {
+    color: #fcc17a;
+}
+
+#int-link {
+    color: #fcc17a;
+    text-decoration: none;
+}
+
+    #int-link:focus, #int-link:hover {
+        color: #195c82;
+        text-decoration: none;
+    }
+
+#int-link-2 {
+    padding-block-start: 50px;
+    color: #fcc17a;
+    text-decoration: none;
+}
+
+    #int-link-2:focus, #int-link-2:hover {
+        color: #195c82;
+        text-decoration: none;
+    }
+
+#profile, #change-password, #email, #personal-data {
+    color: #000000;
+}
+
+#Remember {
+    color: #fcc17a;
+}
+
+.ASZF {
+text-align:center;
+}
+
+li {
+list-style:none;
+}
+
+
+#contact-div {
+    margin-top: 15px;
+}
+
+#contact {
+font-size: 15px;
+color:#fcc17a;
+}
+
+p {
+font-size: 12px;
+color: #808080;
+}
+
+#authentication {
+text-align:center;
+}
+
+#fogas-tablazat {
+    font-size: 12px;
+    color: #808080;
+}
